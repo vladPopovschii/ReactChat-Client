@@ -1,0 +1,214 @@
+.reg-log {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../assets/img/bg.jpg");
+    background-position: center center;
+}
+
+.log-reg-card {
+    background-color: #fff;
+    border-radius: 1.3em;
+    display: flex;
+    width: 90vw;
+    height: 80vh;
+    transition: var(--transition-time);
+    position: relative;
+    overflow: hidden;
+}
+
+.log-reg-card-main-wrapper,
+.log-reg-card-switch-wapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all var(--transition-time) ease;
+    display: flex;
+    pointer-events: none;
+}
+
+.log-reg-card-main-wrapper *,
+.log-reg-card-switch-wapper * {
+    /* transition: var(--transition-time); */
+}
+
+.wrapper-filler-switch,
+.wrapper-filler-main {
+    flex-grow: 1;
+}
+
+.log-reg-card-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+    transition: var(--transition-time);
+    width: 65%;
+    pointer-events: all;
+}
+
+.log-reg-card h1 {
+    margin-bottom: 1.2em;
+    transition: var(--transition-time);
+    position: relative;
+}
+
+.log-reg-card h1.light {
+    color: #fff;
+}
+
+.log-reg-card h1[data-error]::before {
+    content: attr(data-error);
+    position: absolute;
+    color: red;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.4em;
+    white-space: nowrap;
+}
+
+.log-reg-card-alt button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 2.5em;
+    margin: 0 0.5em;
+}
+
+.log-reg-card-alt img {
+    width: 100%;
+    height: auto;
+}
+
+.log-reg-card-info {
+    color: var(--color-dark-alt);
+    font-size: 0.8em;
+    margin: 1.2em 0;
+    font-weight: bold;
+}
+
+.log-reg-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.input-field {
+    background-color: var(--color-light-accent);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8em 1.3em;
+    margin: 0.5em 0;
+    transition: 150ms;
+}
+
+.input-field:hover {
+    transform: scale(1.03);
+}
+
+.input-field.hidden {
+    display: none;
+}
+
+.input-field input {
+    flex-grow: 1;
+    height: 100%;
+    border: none;
+    background: none;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.input-field img {
+    width: 1.7em;
+    height: 1.7em;
+    margin-right: 0.7em;
+}
+
+@keyframes buttonHover {
+    0% {
+        transform: scale(0.9);
+    }
+    30% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.submit-button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    align-self: center;
+    font-size: 1em;
+    padding: 1.6em 8em;
+    background-color: var(--color-dark);
+    color: white;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 2em;
+    box-sizing: border-box;
+    border: 2px solid var(--color-dark);
+    /* transition: 250ms; */
+}
+
+.submit-button {
+    border: 2px solid white;
+}
+
+.submit-button:hover,
+.submit-button:active,
+.submit-button:focus {
+    box-sizing: border-box;
+    background-color: white;
+    border: 2px solid var(--color-dark);
+    color: var(--color-dark);
+    animation: buttonHover 0.25s;
+}
+
+.log-reg-card-switch {
+    background-color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3em;
+    z-index: 3;
+    transition: var(--transition-time);
+    pointer-events: all;
+    width: 35%;
+}
+
+.log-reg-card-switch-text {
+    color: white;
+    max-width: 50%;
+    text-align: center;
+    font-weight: 300;
+    margin: 0.5em 0;
+    margin-bottom: 0.8em;
+}
+
+.reg-part .log-reg-card-switch-wapper {
+    transform: translateX(-100%);
+}
+
+.reg-part .log-reg-card-switch {
+    transform: translateX(100%);
+}
+
+.reg-part .log-reg-card-main {
+    transform: translateX(-100%);
+}
+
+.reg-part .log-reg-card-main-wrapper {
+    transform: translateX(100%);
+}

@@ -1,0 +1,37 @@
+.friends-list {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+}
+
+.friend-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: .2em 0;
+    cursor: pointer;
+    padding: .8em 1.2em;
+    border-radius: .5em;
+}
+
+.friend-item-container:hover {
+    background-color: var(--color-light-accent);
+}
+
+.friend-item-container div {
+    display: flex;
+    align-items: center;
+}
+
+.friend-item-container .friend-img {
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    background-color: var(--color-dark);
+    margin-right: .8em;
+}
+
+.friend-item-container .more-btn {
+    height: 2em;
+}

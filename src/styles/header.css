@@ -1,0 +1,59 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+    background-color: var(--color-light-accent);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.header .header-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.header .header-user-info .img{
+    background-color: var(--color-dark);
+    background-position: 0% 0%;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    margin-right: 1em;
+}
+
+.header .more {
+    background: none;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .more img {
+    height: 2em;
+}
+
+[data-status] {
+    width: 1em;
+    height: 1em;
+    background-color: red;
+    border-radius: 50%;
+    margin-left: .4em;
+}
+
+[data-status="online"] {
+    background-color: #28B446;
+} 
+
+.header .header-friends {
+    display: flex;
+    align-items: center;
+}
+
+.header .header-friends img {
+    width: 2em;
+    height: 2em;
+    margin-right: .7em;
+}
