@@ -4,6 +4,7 @@
 @import "./header.css";
 @import "./chat.css";
 @import "./friends-list.css";
+@import "./settings.css";
 
 :root {
     font-family: "Roboto", sans-serif;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import decode from "jwt-decode";
 import { nanoid } from "nanoid";
+import auth from "../../middleware/auth";
 
 import InputField from "./InputField";
 import SubmitButton from "./SubmitButton";
@@ -12,6 +13,10 @@ import GoogleImage from "../../assets/img/google.svg";
 import FacebookImage from "../../assets/img/facebook.svg";
 
 export default function LogRegCard(props) {
+    useEffect(() => {
+        if (auth(props)) props.history.push("/dashboard");
+    }, []);
+
     const [isLogin, setIsLogin] = useState(true);
     const [requestError, setRequestError] = useState();
     const [inputIds] = useState(() => {
@@ -63,8 +68,12 @@ export default function LogRegCard(props) {
             .then((res) => {
                 console.log(res.data);
                 if (res.data.succes) {
-                    localStorage.setItem("CC_Token", res.data.token);
+                    localStorage.setItem(
+                        KEYS.LOCAL_STORAGE_KEY,
+                        res.data.token
+                    );
                     props.history.push("/dashboard");
+                    props.setupSocket();
                 } else {
                     props.history.push("/login");
                     setRequestError(res.data.errorMsg);
